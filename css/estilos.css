@@ -1,0 +1,689 @@
+/* Accesibilidad: Asegura que tu sitio web sea accesible agregando atributos ARIA y etiquetas apropiadas donde sea necesario. Esto es importante para los usuarios con discapacidades que dependen de lectores de pantalla. */
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&display=swap');
+
+/* Restablecer estilos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 143, 89, 1) 49%, rgba(0, 212, 255, 1) 100%);
+  font-family: Montserrat;
+  width: 100%;
+  line-height: 75px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 143, 89, 1) 49%, rgba(0, 212, 255, 1) 100%);
+  font-family: Montserrat;
+  padding: 0.8em 0;
+  box-shadow: 2px 2px 10px #f1f6f9;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 100%;
+}
+
+header h1 {
+  margin-left: 10px;
+}
+
+/* Contenedor general */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  justify-content: space-between;
+}
+
+/* Contenedor de navegación */
+.container-nav {
+  display: flex;
+  line-height: 3rem;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  max-width: fit-content;
+}
+
+/* Lista de navegación */
+nav ul {
+  list-style: none;
+  display: inline-flex;
+  margin-right: 30px;
+  margin-left: auto;
+  max-width: fit-content;
+}
+
+/* Elementos de navegación */
+nav li {
+  margin-left: 2em;
+  max-width: fit-content;
+}
+
+/* Enlaces de navegación */
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Desplegable header*/
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: whitesmoke;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+}
+
+.dropdown:hover button {
+  font-weight: bold;
+  /* Cambia el color del texto de "PROPUESTAS" */
+}
+
+li button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+nav a:hover {
+  /*color: #e1e1e1d4;*/
+  font-weight: bold;
+}
+
+/* Logo y título */
+.navbar h1 {
+  color: #FFFFFF;
+  margin-left: 30px;
+}
+
+.titulos {
+  color: #FFFFFF;
+}
+
+/* Sección de índice */
+.indice {
+  display: inline-flex;
+  color: #FFFFFF;
+  margin-right: 30px;
+}
+
+.indice a {
+  text-decoration: none;
+  margin: auto;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+
+/* Estilos de cuerpo */
+body {
+  background: linear-gradient(25deg, #ffffff 40%, transparent 41%, transparent 59%, #ffffff 60%), linear-gradient(90deg, transparent 45%, #e1e1e1 45%, #e1e1e1 55%, transparent 55%, transparent 20%, #e1e1e1 20%, #e1e1e1 30%, transparent 30%);
+  background-size: 1em 1em;
+  background-color: #ffffff;
+  opacity: 1;
+  font-family: Sans-serif;
+  font-size: 18px;
+}
+
+/* Pasos pagina principal */
+.pasos {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  font-size: 23px;
+  /*23*/
+  background: #eaeaea;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+/* #ultimo{
+  margin-bottom: auto;
+} */
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.pasos a {
+  text-decoration: underline;
+  font-style: italic;
+  color: black;
+}
+
+.pasos a:hover {
+  opacity: .5;
+}
+
+.pasos h2 {
+  font-size: 23px;
+}
+
+/* Contenedor de perfiles de candidatos */
+.containerr {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Cuadros de perfiles de candidatos */
+.caja {
+  width: 500px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  /* border: solid #000; */
+  border-radius: 15px;
+  background: #fefefe;
+}
+
+/* Imágenes de perfiles de candidatos */
+.caja img {
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+  border: solid #000;
+}
+
+.caja button {
+  background: linear-gradient(-90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 143, 89, 1) 49%, rgba(0, 212, 255, 1) 100%);
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+  font-family: Montserrat;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.caja p {
+  text-align: left;
+}
+
+/* Estilos del carrusel de imágenes */
+.container-carousel {
+  padding: 2rem;
+}
+
+.slider__wrapper {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  max-height: 30rem;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider__nav a {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: opacity ease 0.25s;
+}
+
+.slider__nav a:hover {
+  opacity: 1;
+}
+
+slider img {
+  width: 48rem;
+  height: auto;
+}
+
+input {
+  opacity: 0;
+  /* Hace que no se vea el checkbox en el acordeon de propuestas */
+}
+
+/* Estilos para imágenes de candidatos */
+.imagenes-propuestas {
+  display: grid;
+  place-items: center;
+  width: 50%;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  height: auto
+}
+
+/* Estilos de acordeón de preguntas frecuentes */
+.content {
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Estilos de título de pregunta */
+.centerplease {
+  margin: 0 auto;
+  max-width: fit-content;
+  font-size: 40px;
+}
+
+/* Estilos de sección de Educación */
+.educacion {
+  background-color: #f4a261;
+}
+
+/* Estilos de sección de Medio Ambiente */
+.ambiente {
+  background-color: #6a994e;
+}
+
+/* Estilos de sección de Salud */
+.salud {
+  background-color: #c44536;
+}
+
+/* Estilos de sección de Seguridad y Justicia */
+.seguridad {
+  background-color: #e9c46a;
+}
+
+/* Estilos de sección de Economía */
+.economia {
+  background-color: #457b9d;
+}
+
+/* Estilos de pregunta */
+.question {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 10px 50px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Estilos de respuesta */
+.answers {
+  padding: 0px 15px;
+  margin: 5px 0;
+  width: 100% !important;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  transition: .3s ease;
+  background: #eaeaea;
+  border-radius: 10px;
+}
+
+.answers p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  margin: 10px 0 10px;
+}
+
+.questions:checked~.answers {
+  height: auto;
+  opacity: 1;
+  padding: 5px 15px 5px 15px;
+}
+
+/* Estilos de alternancia de acordeón */
+.plus {
+  position: absolute;
+  margin-left: 10px;
+  z-index: 5;
+  font-size: 2em;
+  transition: 0.3s ease;
+}
+
+.questions:checked+.plus {
+  transform: rotate(45deg);
+}
+
+.resspan {
+  text-align: center;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Montserrat;
+}
+
+
+/*Carousel*/
+#carousel {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.carousel {
+  height: 400px;
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 50%;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 13px;
+  border: #000 solid 5px;
+}
+
+
+.carousel-inner {
+  height: 100%;
+  display: flex;
+  transition: all ease .5s;
+}
+
+.carousel-item {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-item h1 {
+  opacity: 1;
+  max-width: 75%;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-controls .prev {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('prev.svg');
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: .5;
+}
+
+.carousel-controls .next {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('next.svg');
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: .5;
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 1;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.carousel-indicators span {
+  display: inline-block;
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  opacity: .5;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.carousel-indicators span.active {
+  opacity: 1;
+}
+
+.como-votar {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 23px;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 143, 89, 1) 49%, rgba(0, 212, 255, 1) 100%);
+  font-family: Montserrat;
+  padding: 0.8em 0;
+  box-shadow: 2px 2px 10px #f1f6f9;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 100%;
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;  
+}
+
+main {
+  min-height: calc(100vh);
+}
+
+@media screen and (max-width: 640px) {
+
+
+  @media (max-width: 820px) {
+    body {
+      font-size: 16px;
+    }
+
+    .container {
+      flex-direction: column;
+    }
+
+    .container-nav {
+      flex-direction: column;
+    }
+
+    .navbar h1 {
+      text-align: center;
+    }
+
+    nav {
+      justify-content: center;
+    }
+
+    nav ul {
+      flex-direction: column;
+      text-align: center;
+      margin: 0;
+    }
+
+    nav ul li {
+      font-size: 16px;
+      margin: 5px;
+      padding: 0;
+    }
+
+    .dropdown-content {
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+      background-color: whitesmoke;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      z-index: 1;
+      display: none;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      opacity: 0;
+      border-radius: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: all 0.3s ease-in-out;
+      transform-origin: 0 0;
+      top: 0;
+      left: 0;
+      box-shadow: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    nav a {
+      font-weight: normal;
+    }
+
+    .carousel {
+      width: 90%;
+      max-width: 90%;
+    }
+
+    .carousel-item h1 {
+      font-size: 24px;
+    }
+
+    .carousel-controls .prev,
+    .carousel-controls .next {
+      display: none;
+    }
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container-nav {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: row;
+    text-align: center;
+    margin: 0;
+  }
+  header {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 143, 89, 1) 49%, rgba(0, 212, 255, 1) 100%);
+  }
+
+  .imagenes-propuestas {
+    width: 90%;
+  }
+}
