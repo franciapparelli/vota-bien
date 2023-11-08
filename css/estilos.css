@@ -195,10 +195,6 @@ body {
   font-weight: 400;
 }
 
-/* #ultimo{
-  margin-bottom: auto;
-} */
-
 a {
   text-decoration: none;
   color: white;
@@ -569,7 +565,7 @@ footer {
 }
 
 main {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 76.78 - 50.78);
 }
 
 @media screen and (max-width: 640px) {
